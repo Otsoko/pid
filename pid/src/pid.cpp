@@ -1,17 +1,16 @@
 #include "pid.h"
-#include <cstdio>
 
-PID::PID(double ref, double kp, double ki, double kd) {
-    this->kp  = kp;
-    this->ki  = ki;
-    this->kd  = kd;
-    this->ref = ref;
+PID::PID(double reference, double kp, double ki, double kd) {
+    this->kp        = kp;
+    this->ki        = ki;
+    this->kd        = kd;
+    this->reference = reference;
 }
 
 PID::~PID() {}
 
 double PID::compute(double input) {
-    errork = ref - input;
+    errork = reference - input;
 
     if (firstIteration) {
         firstIteration = false;
