@@ -17,7 +17,7 @@ int main(void) {
     for (int i = 0; i < 100; i++) {
         output = pid.compute(input);
         input  = plant(input, output);
-        printf("[%2d] action: % 6.2lf\tplant: % 7.2lf\terror: % 10.6lf\n", i,
+        printf("[%2d] action: % 8.4lf   plant: % 9.4lf   error: % 10.6lf\n", i,
                output, input, (input - reference));
     }
 

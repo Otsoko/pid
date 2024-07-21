@@ -3,18 +3,19 @@ AR=ar
 RL=ranlib
 CP=cp -r
 
-LIBSRCDIR=pid/src
-LIBBINDIR=pid/lib
 SRCDIR=src
 OBJDIR=obj
+LIBSRCDIR=pid/src
 LIBOBJDIR=pid/obj
+LIBBINDIR=pid/lib
 
 CXXFLAGS=-I$(SRCDIR) -I$(LIBSRCDIR) -Wall -Wextra -pedantic -g -c
-LXXFLAGS= -L$(LIBBINDIR) -lpid
+LXXFLAGS=-L$(LIBBINDIR) -lpid
 
 OBJ=$(OBJDIR)/main.o
+LIBOBJ=$(LIBOBJDIR)/pid.o
 LIB=$(LIBBINDIR)/libpid.a
-EXE=pidexe
+EXE=pidx
 
 .PHONY: all lib clean
 
@@ -25,8 +26,8 @@ $(EXE): $(LIB) $(OBJ)
 
 lib: $(LIB)
 
-$(LIB): $(LIBOBJDIR)/pid.o | $(LIBBINDIR)
-	$(AR) rf $@ $(LIBOBJDIR)/pid.o
+$(LIB): $(LIBOBJ) | $(LIBBINDIR)
+	$(AR) rf $@ $^
 	$(RL) $@
 
 $(LIBBINDIR):
@@ -41,7 +42,7 @@ $(LIBOBJDIR):
 $(OBJ): $(SRCDIR)/main.cpp | $(OBJDIR)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
-$(LIBOBJDIR)/pid.o: $(LIBSRCDIR)/pid.cpp | $(LIBOBJDIR)
+$(LIBOBJDIR)/%.o: $(LIBSRCDIR)/%.cpp | $(LIBOBJDIR)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 clean:
