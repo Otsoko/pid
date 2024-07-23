@@ -3,7 +3,7 @@
 C++ Proportional-Integral-Derivative (PID) controller implementation.
 
 ## PID output calculation
-$$u(t)=K_p\cdot e(t)+K_i\cdot\int_0^t e(\tau)d\tau+K_d\cdot\dot{e}(t)$$
+$$u(t)=K_p\cdot e(t)+K_i\cdot\int_0^t e(\tau)\,d\tau+K_d\cdot\dot{e}(t)$$
 
 ## PID discretized output calculation
 
