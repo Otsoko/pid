@@ -1,5 +1,5 @@
 pidx
-obj/
+build/
 .vscode/
 
 # Prerequisites

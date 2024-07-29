@@ -1,4 +1,4 @@
-#include "pid.h"
+#include "pid.hh"
 
 PID::PID(double reference, double kp, double ki, double kd) {
     this->kp        = kp;

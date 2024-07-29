@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-#include <pid.h>
+#include <pid.hh>
 
 double plant(double input, double action);
 

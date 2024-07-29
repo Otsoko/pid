@@ -1,5 +1,4 @@
-#ifndef __PID_H__
-#define __PID_H__
+#pragma once
 
 class PID {
 private:
@@ -20,5 +19,3 @@ public:
     ~PID();
     double compute(double input);
 };
-
-#endif // __PID_H__
