@@ -9,21 +9,23 @@ $$u(t)=K_p\cdot e(t)+K_i\cdot\int_0^t e(\tau)\ d\tau+K_d\cdot\dot{e}(t)$$
 
 $$u[k]=K_p\cdot e[k]+K_i\cdot \left( I[k-1]+\frac{e[k]+e[k-1]}{2}\cdot\Delta T \right)+K_d\cdot \left( \frac{e[k]-e[k-1]}{\Delta T} \right)$$
 
-## Build and run
+## Build
 
-To build and run this project run
+To build this project run
 
 ```bash
+$ mkdir build
+$ cd build
+$ cmake ..
 $ make
-$ ./pidx
 ```
 
-## Build library
+## Run
 
-To build and run just the library run
+To run this project run
 
 ```bash
-$ make lib
+$ ./app
 ```
 
 ## License
