@@ -5,7 +5,8 @@ project(avltree
     LANGUAGES CXX
 )
 
-set(CMAKE_C_FLAGS "-O3 -Wall -Wextra -pedantic")
+set(CMAKE_VERBOSE_MAKEFILE OFF)
+set(CMAKE_CXX_FLAGS "-O3 -Wall -Wextra -pedantic")
 
 add_library(pid
     STATIC
