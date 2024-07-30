@@ -1,3 +1,5 @@
+![build workflow](https://github.com/Otsoko/pid/actions/workflows/build.yml/badge.svg)
+
 # PID
 
 C++ Proportional-Integral-Derivative (PID) controller implementation.
